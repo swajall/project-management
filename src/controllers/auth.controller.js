@@ -17,7 +17,7 @@ const generateAccessAndRefreshTokens= async (userId) => {
     } catch (error){
         throw new ApiError(
             500,
-            "SomeThing went wrong whilw generating access token"
+            "SomeThing went wrong while generating access token"
         )
     }
 }
@@ -33,7 +33,7 @@ const registerUser = asyncHandler(async (req,res) => {
         throw new ApiError(409,"User with email or username already exists",[])
     }
 
-    const user = User.create({
+    const user = await User.create({
         email,
         password,
         username,
