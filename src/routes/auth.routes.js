@@ -10,3 +10,4 @@ router.route("/register").post(userRegisterValidator(),validate,registerUser);
 
 
 export default router;
+//testing
